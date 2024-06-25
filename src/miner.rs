@@ -188,9 +188,9 @@ impl MinerManager {
     #[inline]
     fn hash_suffix(n: f64) -> (f64, &'static str) {
         match n {
-            n if n < 1_000.0 => (n, "hash/s"),
-            n if n < 1_000_000.0 => (n / 1_000.0, "Khash/s"),
-            n if n < 1_000_000_000.0 => (n / 1_000_000.0, "Mhash/s"),
+            n if n < 1_000.0 => (n, "Khash/s"),
+            n if n < 1_000_000.0 => (n / 1_000.0, "Mhash/s"),
+            n if n < 1_000_000_000.0 => (n / 1_000_000.0, "Ghash/s"),
             n if n < 1_000_000_000_000.0 => (n / 1_000_000_000.0, "Ghash/s"),
             n if n < 1_000_000_000_000_000.0 => (n / 1_000_000_000_000.0, "Thash/s"),
             _ => (n, "hash/s"),
